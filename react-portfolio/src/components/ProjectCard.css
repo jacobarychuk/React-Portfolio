@@ -4,8 +4,9 @@
 
 .project-card {
   overflow: hidden;
-  border: 1px solid #dfdedb;
+  border: 0.0625rem solid #dfdedb;
   border-radius: 0.625rem;
+  width: 22rem;
   text-align: center;
 }
 
@@ -15,8 +16,6 @@
 }
 
 .project-card__image {
-  border-top-left-radius: 0.625rem;
-  border-top-right-radius: 0.625rem;
   width: 100%;
   height: 100%;
   object-fit: cover;

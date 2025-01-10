@@ -1,8 +1,0 @@
-.project-grid {
-  justify-content: center;
-  align-items: start;
-  gap: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 22rem);
-  padding: 2rem;
-}
