@@ -1,7 +1,7 @@
 import './Card.css';
 import Tag from './Tag.js';
 
-function Card({ image, title, date, description, link, tags }) {
+function Card({ image, title, subtitle, description, link, tags }) {
   return (
     <a
       className="project-link"
@@ -15,7 +15,7 @@ function Card({ image, title, date, description, link, tags }) {
         </div>
         <div className="project-card__lower">
           <h1 className="project-card__title">{title}</h1>
-          <h2 className="project-card__date">{date}</h2>
+          <h2 className="project-card__subtitle">{subtitle}</h2>
           <p className="project-card__description">{description}</p>
           <div className="project-card__tags-grid">
             {tags.map((tag, index) => (

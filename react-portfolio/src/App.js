@@ -46,7 +46,7 @@ function App() {
       key={project.id}
       image={project.image}
       title={project.title}
-      date={project.date}
+      subtitle={project.date}
       description={project.description}
       link={project.link}
       tags={project.tags}
