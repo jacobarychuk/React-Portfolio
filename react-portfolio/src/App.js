@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Masonry from 'responsive-masonry-layout';
-import ProjectCard from './components/ProjectCard.js';
+import Card from './components/Card.js';
 import TagSortDropdown from './components/TagSortDropdown.js';
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
     : projects;
 
   const projectCards = filteredProjects.map((project) => (
-    <ProjectCard
+    <Card
       key={project.id}
       image={project.image}
       title={project.title}

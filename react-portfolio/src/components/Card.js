@@ -1,7 +1,7 @@
-import './ProjectCard.css';
+import './Card.css';
 import Tag from './Tag.js';
 
-function ProjectCard({ image, title, date, description, link, tags }) {
+function Card({ image, title, date, description, link, tags }) {
   return (
     <a
       className="project-link"
@@ -28,4 +28,4 @@ function ProjectCard({ image, title, date, description, link, tags }) {
   );
 }
 
-export default ProjectCard;
+export default Card;
