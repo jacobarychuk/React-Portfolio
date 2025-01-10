@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import './App.css';
-import ProjectGrid from './components/ProjectGrid.js';
+import Masonry from 'responsive-masonry-layout';
+import ProjectCard from './components/ProjectCard.js';
 import TagSortDropdown from './components/TagSortDropdown.js';
 
 function App() {
@@ -40,10 +40,22 @@ function App() {
       )
     : projects;
 
+  const projectCards = filteredProjects.map((project) => (
+    <ProjectCard
+      key={project.id}
+      image={project.image}
+      title={project.title}
+      date={project.date}
+      description={project.description}
+      link={project.link}
+      tags={project.tags}
+    />
+  ));
+
   return (
     <div className="projects-section">
       <TagSortDropdown tags={allTags} onTagSelect={handleTagSelect} />
-      <ProjectGrid projects={filteredProjects} />
+      <Masonry items={projectCards} columnWidth={22 + 2 * 0.0625} maxColumns={3} spacing={2} />
     </div>
   );
 }
