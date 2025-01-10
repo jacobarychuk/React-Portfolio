@@ -1,5 +1,5 @@
 import './ProjectCard.css';
-import ProjectTag from './ProjectTag.js';
+import Tag from './Tag.js';
 
 function ProjectCard({ image, title, date, description, link, tags }) {
   return (
@@ -19,7 +19,7 @@ function ProjectCard({ image, title, date, description, link, tags }) {
           <p className="project-card__description">{description}</p>
           <div className="project-card__tags-grid">
             {tags.map((tag, index) => (
-              <ProjectTag key={index} label={tag.label} color={tag.color} />
+              <Tag key={index} label={tag.label} color={tag.color} />
             ))}
           </div>
         </div>

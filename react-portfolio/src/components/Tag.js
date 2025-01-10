@@ -1,4 +1,4 @@
-function ProjectTag({ label, color }) {
+function Tag({ label, color }) {
   const tagStyle = {
     display: 'inline-block',
     border: `2px solid ${color}`,
@@ -13,4 +13,4 @@ function ProjectTag({ label, color }) {
   return <div style={tagStyle}>{label}</div>;
 }
 
-export default ProjectTag;
+export default Tag;
