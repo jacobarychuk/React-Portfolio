@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './App.css';
 import Masonry from 'responsive-masonry-layout';
 import ProjectCard from './components/ProjectCard.js';
 import TagSortDropdown from './components/TagSortDropdown.js';
@@ -53,7 +54,8 @@ function App() {
   ));
 
   return (
-    <div className="projects-section">
+    <div className="technical-experience-section">
+      <h1 className="section-heading">Technical Experience</h1>
       <TagSortDropdown tags={allTags} onTagSelect={handleTagSelect} />
       <Masonry items={projectCards} columnWidth={22 + 2 * 0.0625} maxColumns={3} spacing={2} />
     </div>
