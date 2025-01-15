@@ -12,20 +12,17 @@ function TagFilterDropdown({ tags, onTagSelect }) {
 
   return (
     <div className="dropdown">
-      <p>Sort projects by tag</p>
-      <div className="dropdown__select-container">
-        <select className="dropdown__select" onChange={handleChange}>
-          <option value="" disabled={hasSelected}>
-            Select a tag...
+      <select className="dropdown__select" onChange={handleChange}>
+        <option value="" disabled={hasSelected}>
+          Filter by tag
+        </option>
+        <option value="">All tags</option>
+        {tags.map((tag) => (
+          <option key={tag} value={tag}>
+            {tag}
           </option>
-          <option value="">All tags</option>
-          {tags.map((tag) => (
-            <option key={tag} value={tag}>
-              {tag}
-            </option>
-          ))}
-        </select>
-      </div>
+        ))}
+      </select>
     </div>
   );
 }
