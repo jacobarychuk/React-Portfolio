@@ -3,7 +3,7 @@ import './App.css';
 import Masonry from 'responsive-masonry-layout';
 import Card from './components/Card.js';
 import SegmentedControl from './components/SegmentedControl.js';
-import TagSortDropdown from './components/TagSortDropdown.js';
+import TagFilterDropdown from './components/TagFilterDropdown.js';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -100,7 +100,7 @@ function App() {
           },
         ]}
       />
-      <TagSortDropdown key={view} tags={allTags} onTagSelect={handleTagSelect} />
+      <TagFilterDropdown key={view} tags={allTags} onTagSelect={handleTagSelect} />
       <Masonry items={cards} columnWidth={22 + 2 * 0.0625} maxColumns={3} spacing={2} />
     </div>
   );

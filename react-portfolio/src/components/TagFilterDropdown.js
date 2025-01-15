@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './TagSortDropdown.css';
+import './TagFilterDropdown.css';
 
-function TagSortDropdown({ tags, onTagSelect }) {
+function TagFilterDropdown({ tags, onTagSelect }) {
   const [hasSelected, setHasSelected] = useState(false);
 
   const handleChange = (e) => {
@@ -30,4 +30,4 @@ function TagSortDropdown({ tags, onTagSelect }) {
   );
 }
 
-export default TagSortDropdown;
+export default TagFilterDropdown;
