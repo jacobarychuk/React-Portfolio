@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './TagFilterDropdown.css';
+import caron from '../caron.svg';
 
 function TagFilterDropdown({ tags, onTagSelect }) {
   const [hasSelected, setHasSelected] = useState(false);
@@ -12,6 +13,9 @@ function TagFilterDropdown({ tags, onTagSelect }) {
 
   return (
     <div className="dropdown">
+      <div className="dropdown__arrow">
+        <img src={caron} alt=""></img>
+      </div>
       <select className="dropdown__select" onChange={handleChange}>
         <option value="" disabled={hasSelected}>
           Filter by tag

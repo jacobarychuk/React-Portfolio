@@ -1,19 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100&display=swap');
-
 .dropdown {
   position: relative;
   margin: 2rem 2rem 0 2rem;
 }
 
-.dropdown::after {
-  content: '^';
+.dropdown__arrow {
   position: absolute;
-  right: 1rem;
-  bottom: 1.22rem;
-  transform: rotate(180deg);
+  top: 50%;
+  right: 0.8125rem;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: calc(1.5rem * 2 / 3);
   pointer-events: none;
-  font-size: 3rem;
-  font-family: 'Manjari';
 }
 
 .dropdown__select {
