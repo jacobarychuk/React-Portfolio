@@ -1,10 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import './App.css';
 import Masonry from 'responsive-masonry-layout';
-import ProjectCard from './components/ProjectCard.js';
-import TagSortDropdown from './components/TagSortDropdown.js';
+import Card from './components/Card.js';
+import SegmentedControl from './components/SegmentedControl.js';
+import TagFilterDropdown from './components/TagFilterDropdown.js';
 
 function App() {
   const [projects, setProjects] = useState([]);
+  const [jobs, setJobs] = useState([]);
+  const [view, setView] = useState('projects');
   const [selectedTag, setSelectedTag] = useState('');
 
   useEffect(() => {
@@ -24,9 +28,32 @@ function App() {
     fetchProjects();
   }, []);
 
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await fetch('/employment.json');
+        if (!response.ok) {
+          throw new Error('Failed to load employment.json');
+        }
+        const data = await response.json();
+        setJobs(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
+  useEffect(() => {
+    setSelectedTag('');
+  }, [view]);
+
   const allTags = Array.from(
     new Set(
-      projects.flatMap((project) => project.tags.map((tag) => tag.label)),
+      (view === 'projects' ? projects : jobs).flatMap((card) =>
+        card.tags.map((tag) => tag.label),
+      ),
     ),
   );
 
@@ -34,28 +61,47 @@ function App() {
     setSelectedTag(tag);
   };
 
-  const filteredProjects = selectedTag
-    ? projects.filter((project) =>
-        project.tags.some((tag) => tag.label === selectedTag),
+  const filteredCards = selectedTag
+    ? (view === 'projects' ? projects : jobs).filter((card) =>
+        card.tags.some((tag) => tag.label === selectedTag),
       )
-    : projects;
+    : (view === 'projects' ? projects : jobs);
 
-  const projectCards = filteredProjects.map((project) => (
-    <ProjectCard
-      key={project.id}
-      image={project.image}
-      title={project.title}
-      date={project.date}
-      description={project.description}
-      link={project.link}
-      tags={project.tags}
+  const cards = filteredCards.map((item) => (
+    <Card
+      key={item.id}
+      image={item.image}
+      title={item.title}
+      subtitle={
+        view === 'projects' ? item.date : item.company + ' • ' + item.date
+      }
+      description={item.description}
+      link={item.link}
+      tags={item.tags}
     />
   ));
 
   return (
-    <div className="projects-section">
-      <TagSortDropdown tags={allTags} onTagSelect={handleTagSelect} />
-      <Masonry items={projectCards} columnWidth={22 + 2 * 0.0625} maxColumns={3} spacing={2} />
+    <div className="technical-experience-section">
+      <h1 className="section-heading">Technical Experience</h1>
+      <SegmentedControl
+        defaultIndex={0}
+        callback={(value) => setView(value)}
+        segments={[
+          {
+            label: 'Projects',
+            value: 'projects',
+            ref: useRef(),
+          },
+          {
+            label: 'Employment',
+            value: 'employment',
+            ref: useRef(),
+          },
+        ]}
+      />
+      <TagFilterDropdown key={view} tags={allTags} onTagSelect={handleTagSelect} />
+      <Masonry items={cards} columnWidth={22 + 2 * 0.0625} maxColumns={3} spacing={2} />
     </div>
   );
 }
