@@ -4,20 +4,20 @@ import Tag from './Tag.js';
 function Card({ image, title, subtitle, description, link, tags }) {
   return (
     <a
-      className="project-link"
+      className="card__link"
       href={link}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className="project-card">
-        <div className="project-card__upper">
-          <img src={image} className="project-card__image" alt="" />
+      <div className="card">
+        <div className="card-upper">
+          <img src={image} className="card-upper__image" alt="" />
         </div>
-        <div className="project-card__lower">
-          <h1 className="project-card__title">{title}</h1>
-          <h2 className="project-card__subtitle">{subtitle}</h2>
-          <p className="project-card__description">{description}</p>
-          <div className="project-card__tags-grid">
+        <div className="card-lower">
+          <h1 className="card-lower__title">{title}</h1>
+          <h2 className="card-lower__subtitle">{subtitle}</h2>
+          <p className="card-lower__description">{description}</p>
+          <div className="card-lower__tags">
             {tags.map((tag, index) => (
               <Tag key={index} label={tag.label} color={tag.color} />
             ))}

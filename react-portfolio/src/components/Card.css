@@ -1,8 +1,4 @@
-.project-link {
-  text-decoration: none;
-}
-
-.project-card {
+.card {
   overflow: hidden;
   border: 0.0625rem solid #dfdedb;
   border-radius: 0.625rem;
@@ -10,44 +6,48 @@
   text-align: center;
 }
 
-.project-card__upper {
+.card__link {
+  text-decoration: none;
+}
+
+.card-upper {
   position: relative;
   height: 10rem;
 }
 
-.project-card__image {
+.card-upper__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.project-card__lower {
+.card-lower {
   flex-direction: column;
   padding: 1rem;
   background-color: white;
 }
 
-.project-card__title {
+.card-lower__title {
   margin: 0;
   font-size: 1.5rem;
   line-height: 0.73;
   color: black;
 }
 
-.project-card__subtitle {
+.card-lower__subtitle {
   margin: 0.7rem 0 1rem 0;
   font-size: 1rem;
   line-height: 0.6;
   color: #a6a6a6;
 }
 
-.project-card__description {
+.card-lower__description {
   margin: 0;
   font-size: 1rem;
   color: black;
 }
 
-.project-card__tags-grid {
+.card-lower__tags {
   flex-wrap: wrap;
   gap: 0.5rem;
   display: flex;
