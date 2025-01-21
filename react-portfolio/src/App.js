@@ -88,6 +88,9 @@ function App() {
       <h1 className="section-heading">
         <ReactTyped strings={['Hi,', "Hi, I'm John Doe"]} backDelay={1000} typeSpeed={30} />
       </h1>
+      <a href="/resume.pdf" className="resume-button" target="_blank" rel="noopener noreferrer">
+        Resume
+      </a>
 
       {/* Technical Experience Section */}
       <h1 className="section-heading">Technical Experience</h1>
