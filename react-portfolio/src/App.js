@@ -4,6 +4,7 @@ import Masonry from 'responsive-masonry-layout';
 import Card from './components/Card.js';
 import SegmentedControl from './components/SegmentedControl.js';
 import TagFilterDropdown from './components/TagFilterDropdown.js';
+import { ReactTyped } from 'react-typed';
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -82,7 +83,13 @@ function App() {
   ));
 
   return (
-    <div className="technical-experience-section">
+    <div className="content-container">
+      {/* Intro Section */}
+      <h1 className="section-heading">
+        <ReactTyped strings={['Hi,', "Hi, I'm John Doe"]} backDelay={1000} typeSpeed={30} />
+      </h1>
+
+      {/* Technical Experience Section */}
       <h1 className="section-heading">Technical Experience</h1>
       <SegmentedControl
         defaultIndex={0}

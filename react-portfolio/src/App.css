@@ -5,7 +5,11 @@
   text-align: center;
 }
 
-.technical-experience-section {
+.content-container {
   margin: 0 auto;
   max-width: calc(3 * (22rem + 2 * 0.0625rem) + 4 * 2rem); /* Width of 3 cards + 2 gaps + 2 paddings */
+}
+
+.typed-cursor {
+  font-weight: normal;
 }
