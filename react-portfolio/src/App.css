@@ -1,5 +1,5 @@
 .section-heading {
-  margin: 2rem;
+  margin: 0;
   font-size: 2rem;
   line-height: 1;
   text-align: center;
@@ -14,12 +14,22 @@
   font-weight: normal;
 }
 
-.resume-button {
-  position: relative;
-  left: 50%;
+.intro-section {
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  display: flex;
+  margin: 2rem 0;
+}
+
+.intro-section__photo {
   display: inline-block;
-  transform: translateX(-50%);
-  margin: 0 auto;
+  border-radius: 9999px;
+  width: 22rem;
+  height: 22rem;
+}
+
+.intro-section__resume-button {
   border: none;
   border-radius: 0.625rem;
   width: auto;
@@ -33,6 +43,6 @@
   color: inherit;
 }
 
-.resume-button:hover {
+.intro-section__resume-button:hover {
   background-color: rgb(227, 227, 227);
 }
