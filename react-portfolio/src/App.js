@@ -90,6 +90,7 @@ function App() {
           <ReactTyped strings={['Hi,', "Hi, I'm John Doe"]} backDelay={1000} typeSpeed={30} />
         </h1>
         <img src="/photo.svg" className="intro-section__photo"></img>
+        <p className="intro-section__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <a
           href="/resume.pdf"
           className="intro-section__resume-button"

@@ -20,6 +20,7 @@
   gap: 2rem;
   display: flex;
   margin: 2rem 0;
+  padding: 0 2rem;
 }
 
 .intro-section__photo {
@@ -27,6 +28,11 @@
   border-radius: 9999px;
   width: 22rem;
   height: 22rem;
+}
+
+.intro-section__about {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .intro-section__resume-button {
