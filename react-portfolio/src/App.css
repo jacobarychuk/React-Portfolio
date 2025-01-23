@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+hr {
+  margin: 0 2rem 2rem 2rem;
+  border: none;
+  height: 0.125rem;
+  background-color: rgb(240, 240, 240);
+}
+
 .content-container {
   margin: 0 auto;
   max-width: calc(3 * (22rem + 2 * 0.0625rem) + 4 * 2rem); /* Width of 3 cards + 2 gaps + 2 paddings */

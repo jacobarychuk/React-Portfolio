@@ -124,6 +124,8 @@ function App() {
         </a>
       </div>
 
+      <hr />
+
       {/* Technical Experience Section */}
       <h1 className="section-heading">Technical Experience</h1>
       <SegmentedControl
