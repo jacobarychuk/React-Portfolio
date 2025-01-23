@@ -33,6 +33,8 @@
 .intro-section__about {
   margin: 0;
   font-size: 1rem;
+  line-height: 1.15rem;
+  min-height: calc(1.15rem * 3); /* Reserve space for three lines of text to prevent layout shift when profile data loads */
 }
 
 .intro-section__resume-button {

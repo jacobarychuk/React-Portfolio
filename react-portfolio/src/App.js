@@ -9,6 +9,12 @@ import { ReactTyped } from 'react-typed';
 function App() {
   const [projects, setProjects] = useState([]);
   const [jobs, setJobs] = useState([]);
+  const [profileData, setProfileData] = useState({
+    greeting: [''],
+    photo: '',
+    about: '',
+    resume: '',
+  });
   const [view, setView] = useState('projects');
   const [selectedTag, setSelectedTag] = useState('');
 
@@ -44,6 +50,23 @@ function App() {
     };
 
     fetchJobs();
+  }, []);
+
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const response = await fetch('/profile.json');
+        if (!response.ok) {
+          throw new Error('Failed to load profile.json');
+        }
+        const data = await response.json();
+        setProfileData(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchProfileData();
   }, []);
 
   useEffect(() => {
@@ -87,12 +110,12 @@ function App() {
       {/* Intro Section */}
       <div className="intro-section">
         <h1 className="section-heading">
-          <ReactTyped strings={['Hi,', "Hi, I'm John Doe"]} backDelay={1000} typeSpeed={30} />
+          <ReactTyped strings={profileData.greeting} backDelay={1000} typeSpeed={30} />
         </h1>
-        <img src="/photo.svg" className="intro-section__photo"></img>
-        <p className="intro-section__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <img src={profileData.photo} className="intro-section__photo"></img>
+        <p className="intro-section__about">{profileData.about}</p>
         <a
-          href="/resume.pdf"
+          href={profileData.resume}
           className="intro-section__resume-button"
           target="_blank"
           rel="noopener noreferrer"
