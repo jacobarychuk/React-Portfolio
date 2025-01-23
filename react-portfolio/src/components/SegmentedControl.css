@@ -1,6 +1,7 @@
 .segmented-control {
   position: relative;
   display: flex;
+  overflow: hidden;
   margin: 2rem auto;
   border-radius: 0.625rem;
   width: 20rem;

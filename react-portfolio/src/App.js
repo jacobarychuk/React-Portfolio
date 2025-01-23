@@ -4,10 +4,17 @@ import Masonry from 'responsive-masonry-layout';
 import Card from './components/Card.js';
 import SegmentedControl from './components/SegmentedControl.js';
 import TagFilterDropdown from './components/TagFilterDropdown.js';
+import { ReactTyped } from 'react-typed';
 
 function App() {
   const [projects, setProjects] = useState([]);
   const [jobs, setJobs] = useState([]);
+  const [profileData, setProfileData] = useState({
+    greeting: [''],
+    photo: '',
+    about: '',
+    resume: '',
+  });
   const [view, setView] = useState('projects');
   const [selectedTag, setSelectedTag] = useState('');
 
@@ -43,6 +50,23 @@ function App() {
     };
 
     fetchJobs();
+  }, []);
+
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const response = await fetch('/profile.json');
+        if (!response.ok) {
+          throw new Error('Failed to load profile.json');
+        }
+        const data = await response.json();
+        setProfileData(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchProfileData();
   }, []);
 
   useEffect(() => {
@@ -82,7 +106,27 @@ function App() {
   ));
 
   return (
-    <div className="technical-experience-section">
+    <div className="content-container">
+      {/* Intro Section */}
+      <div className="intro-section">
+        <h1 className="section-heading">
+          <ReactTyped strings={profileData.greeting} backDelay={1000} typeSpeed={30} />
+        </h1>
+        <img src={profileData.photo} className="intro-section__photo"></img>
+        <p className="intro-section__about">{profileData.about}</p>
+        <a
+          href={profileData.resume}
+          className="intro-section__resume-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume
+        </a>
+      </div>
+
+      <hr />
+
+      {/* Technical Experience Section */}
       <h1 className="section-heading">Technical Experience</h1>
       <SegmentedControl
         defaultIndex={0}
