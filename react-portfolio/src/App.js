@@ -109,10 +109,10 @@ function App() {
     <div className="content-container">
       {/* Intro Section */}
       <div className="intro-section">
+        <img src={profileData.photo} className="intro-section__photo" alt="" />
         <h1 className="section-heading">
           <ReactTyped strings={profileData.greeting} backDelay={1000} typeSpeed={30} />
         </h1>
-        <img src={profileData.photo} className="intro-section__photo" alt="" />
         <p className="intro-section__about">{profileData.about}</p>
         <a
           href={profileData.resume}
