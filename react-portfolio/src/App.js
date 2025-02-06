@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import './App.css';
+import Navbar from './components/Navbar.js';
 import Masonry from 'responsive-masonry-layout';
 import Card from './components/Card.js';
 import SegmentedControl from './components/SegmentedControl.js';
@@ -15,8 +16,10 @@ function App() {
     about: '',
     resume: '',
   });
+  const [navbarItems, setNavbarItems] = useState([]);
   const [view, setView] = useState('projects');
   const [selectedTag, setSelectedTag] = useState('');
+  const [isNavbarDropdownOpen, setIsNavbarDropdownOpen] = useState(false);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -70,6 +73,23 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const fetchNavbarItems = async () => {
+      try {
+        const response = await fetch('/navbar.json');
+        if (!response.ok) {
+          throw new Error('Failed to load navbar.json');
+        }
+        const data = await response.json();
+        setNavbarItems(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchNavbarItems();
+  }, []);
+
+  useEffect(() => {
     setSelectedTag('');
   }, [view]);
 
@@ -106,47 +126,63 @@ function App() {
   ));
 
   return (
-    <div className="content-container">
-      {/* Intro Section */}
-      <div className="intro-section">
-        <h1 className="section-heading">
-          <ReactTyped strings={profileData.greeting} backDelay={1000} typeSpeed={30} />
-        </h1>
-        <img src={profileData.photo} className="intro-section__photo" alt="" />
-        <p className="intro-section__about">{profileData.about}</p>
-        <a
-          href={profileData.resume}
-          className="intro-section__resume-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Resume
-        </a>
-      </div>
-
-      <hr />
-
-      {/* Technical Experience Section */}
-      <h1 className="section-heading">Technical Experience</h1>
-      <SegmentedControl
-        defaultIndex={0}
-        callback={(value) => setView(value)}
-        segments={[
-          {
-            label: 'Projects',
-            value: 'projects',
-            ref: useRef(),
-          },
-          {
-            label: 'Employment',
-            value: 'employment',
-            ref: useRef(),
-          },
-        ]}
+    <>
+      <Navbar
+        items={navbarItems}
+        isNavbarDropdownOpen={isNavbarDropdownOpen}
+        setIsNavbarDropdownOpen={setIsNavbarDropdownOpen}
       />
-      <TagFilterDropdown key={view} tags={allTags} onTagSelect={handleTagSelect} />
-      <Masonry items={cards} columnWidth={22 + 2 * 0.0625} maxColumns={3} spacing={2} />
-    </div>
+
+      <div
+        style={{
+          visibility: isNavbarDropdownOpen ? 'hidden' : 'visible',
+          maxHeight: isNavbarDropdownOpen ? '0' : 'auto',
+          overflow: isNavbarDropdownOpen ? 'hidden' : 'visible',
+        }}
+      >
+        <div className="content-container">
+          {/* Intro Section */}
+          <div className="intro-section">
+            <img src={profileData.photo} className="intro-section__photo" alt="" />
+            <h1 className="section-heading">
+              <ReactTyped strings={profileData.greeting} backDelay={1000} typeSpeed={30} />
+            </h1>
+            <p className="intro-section__about">{profileData.about}</p>
+            <a
+              href={profileData.resume}
+              className="intro-section__resume-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+          </div>
+
+          <hr />
+
+          {/* Technical Experience Section */}
+          <h1 className="section-heading">Technical Experience</h1>
+          <SegmentedControl
+            defaultIndex={0}
+            callback={(value) => setView(value)}
+            segments={[
+              {
+                label: 'Projects',
+                value: 'projects',
+                ref: useRef(),
+              },
+              {
+                label: 'Employment',
+                value: 'employment',
+                ref: useRef(),
+              },
+            ]}
+          />
+          <TagFilterDropdown key={view} tags={allTags} onTagSelect={handleTagSelect} />
+          <Masonry items={cards} columnWidth={22 + 2 * 0.0625} maxColumns={3} spacing={2} />
+        </div>
+      </div>
+    </>
   );
 }
 
