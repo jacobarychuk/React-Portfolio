@@ -1,7 +1,9 @@
-name: Clean Deploy
+name: Safe Deploy
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - "main"
 
 jobs:
   build-and-deploy:
@@ -29,4 +31,9 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: react-portfolio/build/
-          dangerous-clean-slate: true
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            images/**
+            config/**
