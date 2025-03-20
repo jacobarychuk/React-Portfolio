@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Job",
     "company": "Company Name",
     "date": "December, 2024",
@@ -15,7 +15,7 @@
   },
   {
     "id": 2,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Job",
     "company": "Company Name",
     "date": "December, 2024",
@@ -27,7 +27,7 @@
   },
   {
     "id": 3,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Job",
     "company": "Company Name",
     "date": "December, 2024",
@@ -43,7 +43,7 @@
   },
   {
     "id": 4,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Job",
     "company": "Company Name",
     "date": "December, 2024",
@@ -57,7 +57,7 @@
   },
   {
     "id": 5,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Job",
     "company": "Company Name",
     "date": "December, 2024",
@@ -74,7 +74,7 @@
   },
   {
     "id": 6,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Job",
     "company": "Company Name",
     "date": "December, 2024",
@@ -87,7 +87,7 @@
   },
   {
     "id": 7,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Job",
     "company": "Company Name",
     "date": "December, 2024",
@@ -99,7 +99,7 @@
   },
   {
     "id": 8,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Job",
     "company": "Company Name",
     "date": "December, 2024",
@@ -118,7 +118,7 @@
   },
   {
     "id": 9,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Job",
     "company": "Company Name",
     "date": "December, 2024",

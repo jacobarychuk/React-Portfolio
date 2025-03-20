@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('/projects.json');
+        const response = await fetch('/config/projects.json');
         if (!response.ok) {
           throw new Error('Failed to load projects.json');
         }
@@ -41,7 +41,7 @@ function App() {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await fetch('/employment.json');
+        const response = await fetch('/config/employment.json');
         if (!response.ok) {
           throw new Error('Failed to load employment.json');
         }
@@ -58,7 +58,7 @@ function App() {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const response = await fetch('/profile.json');
+        const response = await fetch('/config/profile.json');
         if (!response.ok) {
           throw new Error('Failed to load profile.json');
         }
@@ -75,7 +75,7 @@ function App() {
   useEffect(() => {
     const fetchNavbarItems = async () => {
       try {
-        const response = await fetch('/navbar.json');
+        const response = await fetch('/config/navbar.json');
         if (!response.ok) {
           throw new Error('Failed to load navbar.json');
         }

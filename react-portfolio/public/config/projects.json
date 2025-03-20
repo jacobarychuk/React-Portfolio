@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Project",
     "date": "December, 2024",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Project",
     "date": "December, 2024",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -31,7 +31,7 @@
   },
   {
     "id": 3,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Project",
     "date": "December, 2024",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -45,7 +45,7 @@
   },
   {
     "id": 4,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Project",
     "date": "December, 2024",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -57,7 +57,7 @@
   },
   {
     "id": 5,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Project",
     "date": "December, 2024",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -70,7 +70,7 @@
   },
   {
     "id": 6,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Project",
     "date": "December, 2024",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
@@ -84,7 +84,7 @@
   },
   {
     "id": 7,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Project",
     "date": "December, 2024",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -96,7 +96,7 @@
   },
   {
     "id": 8,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Project",
     "date": "December, 2024",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -110,7 +110,7 @@
   },
   {
     "id": 9,
-    "image": "/image.jpg",
+    "image": "/assets/image.jpg",
     "title": "My Project",
     "date": "December, 2024",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
